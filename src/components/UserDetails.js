@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent, Grid, Avatar } from "@material-ui/core";
 import Heart from 'mdi-material-ui/Heart'
 import HeartOutline from 'mdi-material-ui/HeartOutline'
+import Ratings from "./Ratings";
 class UserDetails extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +48,8 @@ class UserDetails extends React.Component {
                   <Grid container>
                     <Grid item xs={12} container>
                       <Grid item xs={3}><Avatar alt={this.state.item.name} src={this.state.item.img} /></Grid>
-                      <Grid item xs={3}>{this.state.item.rating}{this.state.ratingHearts}</Grid>
+                      <Grid item xs={3}>
+                      <Ratings ratings={this.state.item.rating}/></Grid>
                     </Grid>
                     <Grid item xs={12}>{this.state.item.Description}</Grid>
                   </Grid>
