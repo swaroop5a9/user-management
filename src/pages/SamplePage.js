@@ -1,6 +1,6 @@
 import React from "react";
 import Sample from "../components/sample";
-import UserDetails from "../components/UserDetails";
+// import UserDetails from "../components/UserDetails";
 import { Card, CardContent, Grid, Paper } from "@material-ui/core";
 class SamplePage extends React.Component {
   constructor(props) {
@@ -20,20 +20,13 @@ class SamplePage extends React.Component {
       <div>
         <Card>
           <CardContent>
-            <Grid item xs={12}>
-              <Grid container justify="center" spacing={8}>
-                <Grid item>
+              <Grid container spacing={24}>
+                <Grid item xs={12}>
                   <Paper>
                     <Sample handleClick={this.handleClick} />
                   </Paper>
                 </Grid>
-                <Grid item>
-                  <Paper>
-                    <UserDetails item={this.state.item} />
-                  </Paper>
-                </Grid>
               </Grid>
-            </Grid>
           </CardContent>
         </Card>
       </div>
