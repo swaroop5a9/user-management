@@ -5,8 +5,13 @@ class Ratings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ratings: props.ratings
+      ratings: props.ratings,
+      ratingHearts:[]
     };
+  }
+
+  componentDidMount(){
+    this.fillRating()
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {

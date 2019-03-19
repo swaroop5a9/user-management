@@ -1,41 +1,20 @@
 import React from "react";
 import { Card, CardContent, Grid, Avatar } from "@material-ui/core";
-import Heart from 'mdi-material-ui/Heart'
-import HeartOutline from 'mdi-material-ui/HeartOutline'
 import Ratings from "./Ratings";
 class UserDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: props.item,
-      ratingHearts: []
+      item: props.item
     };
   }
-
-  fillRating = () => {
-    let children = []
-    for (let i = 0; i < this.state.item.rating; i++) {
-      children[i] = <Heart key={i} />
-    }
-    if (children.length < 5) {
-      for (let i = children.length; i < 5; i++)
-        children[i] = <HeartOutline key={i} />
-    }
-    this.setState({
-      ratingHearts: children
-    })
-  }
-
-  componentDidMount() {
-    // console.log("componentDidMoun")
-    this.fillRating()
-  }
-
+  
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       item: nextProps.item
-    }, this.fillRating());
+    });
   }
+
   render() {
     return (
       <div>
