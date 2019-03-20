@@ -3,13 +3,15 @@ import data from "../people.json";
 import { Grid } from "@material-ui/core";
 import MenuRight from 'mdi-material-ui/MenuRight'
 import Magnify from 'mdi-material-ui/Magnify'
+import Close from 'mdi-material-ui/Close'
 import UserDetails from "./UserDetails.js";
 class sample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       item: {},
-      people: data.People
+      people: data.People,
+      searchValue: ''
     };
   }
 
@@ -23,10 +25,19 @@ class sample extends React.Component {
     })
   };
 
+  handleClear = item => {
+    this.setState({
+      searchValue: ''
+    })
+  };
+
   handleChange = (event) => {
     let list = data.People
     let currentList = []
     let newList = []
+    this.setState({
+      searchValue: event.target.value
+    })
     if (event.target.value !== "") {
       currentList = list;
       newList = currentList.filter(item => {
@@ -48,7 +59,8 @@ class sample extends React.Component {
           <Grid container spacing={16} item xs={2}>
             <div>
               <Magnify style={styles.searchIconCss} />
-              <input type="text" style={styles.searchCss} placeholder="search" onChange={this.handleChange}></input>
+              <input type="text" style={styles.searchCss} placeholder="search" onChange={this.handleChange} value={this.state.searchValue}></input>
+              <Close style={styles.clearIconCss} onClick={this.handleClear} />
             </div>
             <Grid container item xs={12}>
               {this.state.people.map((listItem, index) => (
@@ -88,7 +100,13 @@ const styles = {
   searchIconCss: {
     fontSize: '20px',
     paddingLeft: '30px',
-    paddingTop: '9px',
+    paddingTop: '8px',
+    position: 'absolute'
+  },
+  clearIconCss: {
+    fontSize: '20px',
+    marginLeft: '-24px',
+    paddingTop: '8px',
     position: 'absolute'
   }
 };
