@@ -12,17 +12,17 @@ class Ratings extends React.Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       ratings: nextProps.ratings
-    },()=>this.fillRating());
+    }, () => this.fillRating());
   }
-  
+
   fillRating = () => {
     let children = [];
     for (let i = 0; i < this.state.ratings; i++) {
-      children[i] = <Heart key={i} />;
+      children[i] = <Heart key={i} style={styles.ratingClass} />;
     }
     if (children.length < 5) {
       for (let i = children.length; i < 5; i++)
-        children[i] = <HeartOutline key={i} />;
+        children[i] = <HeartOutline key={i} style={styles.ratingClass} />;
     }
     this.setState({
       ratingHearts: children
@@ -37,5 +37,11 @@ class Ratings extends React.Component {
     );
   }
 }
+
+const styles = {
+  ratingClass: {
+    fontSize: '20px'
+  }
+};
 
 export default Ratings;
