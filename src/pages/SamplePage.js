@@ -20,17 +20,23 @@ class SamplePage extends React.Component {
       <div>
         <Card>
           <CardContent>
-              <Grid container spacing={24}>
-                <Grid item xs={12}>
-                  <Paper>
-                    <Sample handleClick={this.handleClick} />
-                  </Paper>
-                </Grid>
+            <Grid container spacing={24} style={styles.bodyFont}>
+              <Grid item xs={12}>
+                <Paper>
+                  <Sample handleClick={this.handleClick} />
+                </Paper>
               </Grid>
+            </Grid>
           </CardContent>
         </Card>
       </div>
     );
+  }
+}
+
+const styles = {
+  bodyFont: {
+    fontFamily: 'calibri'
   }
 }
 
