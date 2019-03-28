@@ -1,7 +1,5 @@
 import React from "react";
 import { Card, CardContent, Grid, Avatar, Button } from "@material-ui/core";
-import Heart from 'mdi-material-ui/Heart'
-import HeartOutline from 'mdi-material-ui/HeartOutline'
 import Ratings from "./Ratings";
 class UserDetails extends React.Component {
   constructor(props) {

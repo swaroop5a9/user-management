@@ -2,6 +2,7 @@ import React from "react";
 import Sample from "../components/sample";
 // import UserDetails from "../components/UserDetails";
 import { Card, CardContent, Grid, Paper } from "@material-ui/core";
+import Header from "../components/home/Header";
 class SamplePage extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +19,7 @@ class SamplePage extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         <Card>
           <CardContent>
             <Grid container spacing={24} style={styles.bodyFont}>

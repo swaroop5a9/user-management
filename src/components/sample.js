@@ -56,13 +56,13 @@ class sample extends React.Component {
     return (
       <div>
         <Grid container spacing={24} justify="center">
-          <Grid container spacing={16} item xs={2}>
+          <Grid item xs={2} lg={2}>
             <div>
               <Magnify style={styles.searchIconCss} />
               <input type="text" style={styles.searchCss} placeholder="search" onChange={this.handleChange} value={this.state.searchValue}></input>
               <Close style={styles.clearIconCss} onClick={this.handleClear} />
             </div>
-            <Grid container item xs={12}>
+            <Grid item xs={12}>
               {this.state.people.map((listItem, index) => (
                 <Grid item xs={12} onClick={() => this.handleClick(listItem)} key={index} style={styles.squaresDiv}>
                   <span>{listItem.name}</span>
@@ -82,31 +82,31 @@ class sample extends React.Component {
 
 const styles = {
   squaresDiv: {
-    height: '35px',
+    // height: '35px',
     border: '1px solid #f0f0f5',
-    padding: '20px 0px 40px 50px',
-    marginLeft: '20px',
+    padding: '10px',
+    // marginLeft: '20px',
     cursor: 'pointer'
   },
   searchCss: {
     border: '1px solid #f0f0f5',
     borderRadius: '25px',
-    marginLeft: '25px',
-    height: '30px',
+    // marginLeft: '25px',
+    // height: '30px',
     fontSize: '15px',
-    textIndent: '25px',
+    // textIndent: '25px',
     // padding: '20px 0px 0px 20px',
   },
   searchIconCss: {
     fontSize: '20px',
-    paddingLeft: '30px',
-    paddingTop: '8px',
+    // paddingLeft: '30px',
+    // paddingTop: '8px',
     position: 'absolute'
   },
   clearIconCss: {
     fontSize: '20px',
-    marginLeft: '-24px',
-    paddingTop: '8px',
+    // marginLeft: '-24px',
+    // paddingTop: '8px',
     position: 'absolute'
   }
 };
